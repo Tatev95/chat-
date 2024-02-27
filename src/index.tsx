@@ -7,6 +7,7 @@ import { LogOutHOC } from "./HOC/LogOutHOC";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { SignIn } from "./components/signin/SignIn";
 import { Messages } from "./components/messages/Messages";
+import { Video } from "./components/video/Video";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
@@ -19,6 +20,14 @@ root.render(
           element={
             <LogOutHOC>
               <SignIn />
+            </LogOutHOC>
+          }
+        />
+        <Route
+          path="/video"
+          element={
+            <LogOutHOC>
+              <Video videoUrl="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
             </LogOutHOC>
           }
         />
